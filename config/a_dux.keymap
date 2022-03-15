@@ -97,13 +97,13 @@
 
                         bindings = <
     &trans     &trans       &trans      &kp LBKT      &kp EQUAL
-        &kp UNDERSCORE     &kp RBKT      &kp trans      &kp trans      &kp trans
+        &kp UNDERSCORE     &kp RBKT      &trans      &trans      &trans
 
-    &kp trans     &kp GRAVE      &kp BLSH     &kp LPAR     &kp PLUS
+    &trans     &kp GRAVE      &kp BLSH     &kp LPAR     &kp PLUS
         &kp MINUS     &kp RPAR      &kp ASTERISK     &kp APOS       &DQT
 
-    &trans       &trans      &kp trans      &LBKT       &trans
-        &trans       &kp RBKT       &kp trans       &kp trans       &trans
+    &trans       &trans      &trans      &LBKT       &trans
+        &trans       &kp RBKT       &trans       &trans       &trans
 
     &trans      &trans
         &trans      &kp BSPC
@@ -155,7 +155,7 @@
 
                         bindings = <
     &kp ESC       &trans      &kp UP      &trans       &kp C_BRI_UP
-        &kp C_VOL_UP        &kp C_PLAY_PAUSE     &trans      &kp trans      &kp trans
+        &kp C_VOL_UP        &kp C_PLAY_PAUSE     &trans      &trans      &trans
 
     &trans     &kp LEFT       &kp DOWN     &kp RIGHT     &kp C_BRI_DOWN
         &kp C_VOL_DOWN     &kp LGUI      &kp LSHIFT      &kp LALT     &kp LCTL
