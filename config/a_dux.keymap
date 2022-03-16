@@ -100,7 +100,7 @@
         &trans      &kp RBRC      &kp UNDERSCORE      &trans      &trans
 
     &kp GRAVE     &kp EQUAL      &kp BSLH     &kp LPAR     &kp PLUS
-        &kp MINUS     &kp RPAR      &kp ASTERISK     &kp APOS       &DQT
+        &kp MINUS     &kp RPAR      &kp STAR     &kp APOS       &kp DQT
 
     &trans       &trans      &trans      &LBKT       &trans
         &trans       &kp RBKT       &trans       &trans       &trans
