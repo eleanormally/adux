@@ -68,7 +68,7 @@
 
                         bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B
-        &kb J        &kp L       &kp U       &kp Y       &kp SEMI
+        &kp J        &kp L       &kp U       &kp Y       &kp SEMI
 
     &hm_l LCTRL A     &hm_l LALT R      &hm_l LSHFT S     &hm_l LGUI T     &kp G
         &kp M     &hm_r RGUI N      &hm_r RSHFT E     &hm_r RALT I      &hm_r RCTRL O
