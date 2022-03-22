@@ -14,7 +14,8 @@
 #define low 2
 #define nav 3
 #define rse 4
-#define _bt 5
+#define non 5
+
 
 #define cterm 50
 
@@ -112,6 +113,12 @@
                 key-positions = <32 33>;
                 bindings = <&mo rse>;
                 layers = <0 1>;
+            };
+            exit_pause {
+                timeout-ms = <cterm>;
+                key-positions = <11 12 13 16 17 18>;
+                bindings = <&to def>;
+                layers = <5>;
             };
         };
 
@@ -215,7 +222,7 @@
 // ├─────┼─────┤     ├─────┼─────┤                  ├─────┼─────┤     ├─────┼─────┤
 // │ BT2 │     ├─────┤     │     │                  │     │     ├─────┤     │ CTL │
 // ├─────┼─────┘     └─────┴─────┘                  └─────┴─────┘     └─────┼─────┤
-// │ BT1 │                 ┌─────┬─────┐      ┌─────┬─────┐                 │     │
+// │ BT1 │                 ┌─────┬─────┐      ┌─────┬─────┐                 │ HOL │
 // └─────┘                 │     │     │      │     │     │                 └─────┘
 //                         └─────┴─────┘      └─────┴─────┘
 
@@ -227,7 +234,7 @@
         &kp C_VOL_DN     &kp LGUI      &kp LSHFT      &kp LALT     &kp LCTRL
 
     &bt BT_SEL 0       &trans      &trans     &trans       &trans
-        &trans       &trans       &trans        &trans       &trans
+        &trans       &trans       &trans        &trans       &to non
 
     &trans      &trans
         &trans      &trans
@@ -260,6 +267,37 @@
 
     &trans      &trans
         &trans      &trans
+                        >;
+                };
+
+
+	    };
+
+        non {
+//             ┌─────┐                                          ┌─────┐
+//       ┌─────┤     ├─────┬─────┐                  ┌─────┬─────┤     ├─────┐
+//       │     ├─────┤     │     │                  │     │     ├─────┤     │
+// ┌─────┼─────┤     ├─────┼─────┤                  ├─────┼─────┤     ├─────┼─────┐
+// │     │     ├─────┤     │     │                  │     │     ├─────┤     │     │
+// ├─────┼─────┤     ├─────┼─────┤                  ├─────┼─────┤     ├─────┼─────┤
+// │     │     ├─────┤     │     │                  │     │     ├─────┤     │     │
+// ├─────┼─────┘     └─────┴─────┘                  └─────┴─────┘     └─────┼─────┤
+// │     │                 ┌─────┬─────┐      ┌─────┬─────┐                 │     │
+// └─────┘                 │     │     │      │     │     │                 └─────┘
+//                         └─────┴─────┘      └─────┴─────┘
+
+                        bindings = <
+    &none    &none      &none      &none       &none
+        &none       &none      &none      &none       &none
+
+    &none        &none      &none      &none       &none
+        &none      &none       &none        &none        &none
+
+    &none        &none      &none      &none       &none
+        &none       &none      &none      &none       &none
+
+    &none      &none
+        &none      &none
                         >;
                 };
 
