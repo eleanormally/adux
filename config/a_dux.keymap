@@ -16,9 +16,11 @@
 #define rse 4
 #define _bt 5
 
-&kscan0 {
-    debounce-period = <32>;
-};
+#define cterm 50
+
+// &kscan0 {
+//     debounce-period = <32>;
+// };
 
 &lt {
     flavor = "balanced";
@@ -26,26 +28,90 @@
 };
 
 / {
-        behaviors {
-            hm_l: left_hand_positional_hold_tap {
-                compatible = "zmk,behavior-hold-tap";
-                label = "LEFT_POSITIONAL_HOLD_TAP";
-                #binding-cells = <2>;
-                flavor = "balanced";
-                tapping-term-ms = <105>;
-                bindings = <&kp>, <&kp>;
-                quick-tap-ms = <200>;
-                hold-trigger-key-positions = <6 7 8 9 15 16 17 18 19 25 26 27 28 30 31 32 33>;
+        // behaviors {
+        //     hm_l: left_hand_positional_hold_tap {
+        //         compatible = "zmk,behavior-hold-tap";
+        //         label = "LEFT_POSITIONAL_HOLD_TAP";
+        //         #binding-cells = <2>;
+        //         flavor = "balanced";
+        //         tapping-term-ms = <105>;
+        //         bindings = <&kp>, <&kp>;
+        //         quick-tap-ms = <200>;
+        //         hold-trigger-key-positions = <6 7 8 9 15 16 17 18 19 25 26 27 28 30 31 32 33>;
+        //     };
+        //     hm_r: right_hand_positional_hold_tap {
+        //         compatible = "zmk,behavior-hold-tap";
+        //         label = "RIGHT_POSITIONAL_HOLD_TAP";
+        //         #binding-cells = <2>;
+        //         flavor = "balanced";
+        //         tapping-term-ms = <105>;
+        //         bindings = <&kp>, <&kp>;
+        //         quick-tap-ms = <200>;
+        //         hold-trigger-key-positions = <0 1 2 3 10 11 12 13 14 21 22 23 24 30 31 32 33>;
+        //     };
+        // };
+
+        combos {
+            compatible = "zmk,combos";
+            combo_lcmd {
+                timeout-ms = <cterm>;
+                key-positions = <3 13>;
+                bindings = <&kp LGUI>;
+                layers = <0 1>;
             };
-            hm_r: right_hand_positional_hold_tap {
-                compatible = "zmk,behavior-hold-tap";
-                label = "RIGHT_POSITIONAL_HOLD_TAP";
-                #binding-cells = <2>;
-                flavor = "balanced";
-                tapping-term-ms = <105>;
-                bindings = <&kp>, <&kp>;
-                quick-tap-ms = <200>;
-                hold-trigger-key-positions = <0 1 2 3 10 11 12 13 14 21 22 23 24 30 31 32 33>;
+            combo_lalt {
+                timeout-ms = <cterm>;
+                key-positions = <1 11>;
+                bindings = <&kp LALT>;
+                layers = <0 1>;
+            };
+            combo_lsft {
+                timeout-ms = <cterm>;
+                key-positions = <2 12>;
+                bindings = <&kp LSHFT>;
+                layers = <0 1>;
+            };
+            combo_lctl {
+                timeout-ms = <cterm>;
+                key-positions = <0 10>;
+                bindings = <&kp LCTRL>;
+                layers = <0 1>;
+            };
+            combo_rcmd {
+                timeout-ms = <cterm>;
+                key-positions = <6 16>;
+                bindings = <&kp RGUI>;
+                layers = <0 1>;
+            };
+            combo_ralt {
+                timeout-ms = <cterm>;
+                key-positions = <8 18>;
+                bindings = <&kp RALT>;
+                layers = <0 1>;
+            };
+            combo_rsft {
+                timeout-ms = <cterm>;
+                key-positions = <7 17>;
+                bindings = <&kp RSHFT>;
+                layers = <0 1>;
+            };
+            combo_rctl {
+                timeout-ms = <cterm>;
+                key-positions = <9 19>;
+                bindings = <&kp RCTRL>;
+                layers = <0 1>;
+            };
+            combo_low {
+                timeout-ms = <cterm>;
+                key-positions = <30 31>;
+                bindings = <&mo low>;
+                layers = <0 1>;
+            };
+            combo_rse {
+                timeout-ms = <cterm>;
+                key-positions = <32 33>;
+                bindings = <&mo rse>;
+                layers = <0 1>;
             };
         };
 
@@ -57,10 +123,10 @@
 //             ┌─────┐                                          ┌─────┐
 //       ┌─────┤  F  ├─────┬─────┐                  ┌─────┬─────┤  U  ├─────┐
 //       │  W  ├─────┤  P  │  B  │                  │  J  │  L  ├─────┤  Y  │
-// ┌─────┼─────┤  N  ├─────┼─────┤                  ├─────┼─────┤  E  ├─────┼─────┐
-// │  Q  │  H  ├─SFT─┤  T  │  F  │                  │  M  │  N  ├─SFT─┤  I  │  ;  │
+// ┌─────┼─────┤  S  ├─────┼─────┤                  ├─────┼─────┤  E  ├─────┼─────┐
+// │  Q  │  R  ├─SFT─┤  T  │  G  │                  │  M  │  N  ├─SFT─┤  I  │  ;  │
 // ├─────┼─ALT─┤  C  ├─GUI─┼─────┤                  ├─────┼─GUI─┤  ,  ├─ALT─┼─────┤
-// │  S  │  X  ├─────┤  D  │  V  │                  │  K  │  H  ├─────┤  .  │  O  │
+// │  A  │  X  ├─────┤  D  │  V  │                  │  K  │  H  ├─────┤  .  │  O  │
 // ├─CTL─┼─────┘     └─────┴─────┘                  └─────┴─────┘     └─────┼─CTL─┤
 // │  Z  │                 ┌─────┬─────┐      ┌─────┬─────┐                 │  /  │
 // └─────┘                 │ TAB │ SPC │      │ DEL │ ENT │                 └─────┘
@@ -70,14 +136,14 @@
     &kp Q       &kp W       &kp F       &kp P       &kp B
         &kp J        &kp L       &kp U       &kp Y       &kp SEMI
 
-    &hm_l LCTRL A     &hm_l LALT R      &hm_l LSHFT S     &hm_l LGUI T     &kp G
-        &kp M     &hm_r RGUI N      &hm_r RSHFT E     &hm_r RALT I      &hm_r RCTRL O
+    &kp A     &kp R      &kp S     &kp T     &kp G
+        &kp M     &kp N      &kp E     &kp I      &kp O
 
     &kp Z      &kp X       &kp C       &kp D       &kp V
         &kp K       &kp H       &kp COMMA       &kp DOT       &kp SLASH
 
-    &lt cod TAB       &lt low SPACE
-        &lt rse BSPC      &lt nav ENTER
+    &lt cod TAB       &kp SPACE
+        &kp BSPC      &lt nav ENTER
                         >;
                 };
 
