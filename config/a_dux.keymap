@@ -179,7 +179,7 @@
         &trans       &kp RBKT       &trans       &trans       &trans
 
     &trans      &trans
-        &trans      &kp BSPC
+        &trans      &trans
                         >;
                 };
 
@@ -216,9 +216,9 @@
                 nav {
 //             ┌─────┐                                          ┌─────┐
 //       ┌─────┤  ↑  ├─────┬─────┐                  ┌─────┬─────┤     ├─────┐
-//       │     ├─────┤     │ ☉ ↑ │                  │ VOLU│ PLAY├─────┤     │
+//       │     ├─────┤     │ BRIU│                  │ VOLU│ PLAY├─────┤     │
 // ┌─────┼─────┤  ↓  ├─────┼─────┤                  ├─────┼─────┤ SFT ├─────┼─────┐
-// │ ESC │  ←  ├─────┤  →  │ ☉ ↓ │                  │ VOLD│ GUI ├─────┤ ALT │     │
+// │ ESC │  ←  ├─────┤  →  │ BRID│                  │ VOLD│ GUI ├─────┤ ALT │     │
 // ├─────┼─────┤     ├─────┼─────┤                  ├─────┼─────┤     ├─────┼─────┤
 // │ BT2 │     ├─────┤     │     │                  │     │     ├─────┤     │ CTL │
 // ├─────┼─────┘     └─────┴─────┘                  └─────┴─────┘     └─────┼─────┤
@@ -234,7 +234,7 @@
         &kp C_VOL_DN     &kp LGUI      &kp LSHFT      &kp LALT     &kp LCTRL
 
     &bt BT_SEL 0       &trans      &trans     &trans       &trans
-        &trans       &trans       &trans        &trans       &to non
+        &trans       &trans       &trans        &trans       &to 5
 
     &trans      &trans
         &trans      &trans
