@@ -63,7 +63,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Update CMake
-        run: python3 -m pip install cmake
+        run: python3 -m pip3 install cmake
       - name: West Init
         run: west init -l config
       - name: West Update
