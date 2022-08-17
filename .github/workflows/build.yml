@@ -62,8 +62,10 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Update CMake
-        run: python3 -m pip3 install cmake
+      - name: actions-setup-cmake
+        uses: jwlawson/actions-setup-cmake@v1.12
+        with:
+          cmake-version: 'latest'
       - name: West Init
         run: west init -l config
       - name: West Update
