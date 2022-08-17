@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Install yaml2json
         run: python3 -m pip install remarshal
-      - name: Update Cmake
-        run: python3 -m pip install cmake
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
@@ -30,7 +28,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
-    steps:
+      steps:
+      - name: Update Cmake
+          run: python3 -m pip install cmake
       - name: Prepare variables
         id: variables
         run: |
