@@ -30,7 +30,7 @@ jobs:
       matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
       steps:
       - name: Update Cmake
-          run: python3 -m pip install cmake
+        run: python3 -m pip install cmake
       - name: Prepare variables
         id: variables
         run: |
