@@ -58,7 +58,7 @@
                 timeout-ms = <100>;
                 key-positions = <10 11 12 13 16 17 18 19 20 21 22 23 26 27 28 29>;
                 bindings = <&bt BT_CLR>;
-            }
+            };
             combo_lcmd {
                 timeout-ms = <cterm>;
                 key-positions = <3 13>;
@@ -238,7 +238,7 @@
     &trans    &kp LEFT       &kp DOWN     &kp RIGHT     &kp C_BRI_DN
         &kp C_VOL_DN     &kp LGUI      &kp LSHFT      &kp LALT     &kp LCTRL
 
-    &trans      & trans     &trans     &trans       &trans
+    &trans      &trans     &trans     &trans       &trans
         &trans       &trans       &trans        &trans       &to 5
 
     &trans      &trans
